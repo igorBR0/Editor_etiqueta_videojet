@@ -43,6 +43,7 @@ var express = require('express'),
 app.use(express.static(__dirname + '/public'), bodyParser.json());
 app.engine('html', require('ejs').renderFile);
 //app.set('views', path.join(__dirname, '/views'));
+  app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'html');
 
 //**OKK**//
