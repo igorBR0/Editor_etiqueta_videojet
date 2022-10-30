@@ -7,7 +7,6 @@ var bodyParser = require('body-parser')
 var jsonParser = bodyParser.json()
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 fs.existsSync("uploads") || fs.mkdirSync("uploads");
-
 var xml2js = require('xml2js');
 
 var extractedData0 = []
@@ -32,18 +31,22 @@ const upload = multer({ storage })
 
 
 
+//function (err, data) {
+// if (err) console.log(err);
 
+///console.log("successfully written our update xml to file");
+//});
 
 var express = require('express'),
   app = express();
-const port = process.env.PORT || 3000;
+  const port = process.env.PORT || 3000;
 app.use(express.static(__dirname + '/public'), bodyParser.json());
-
-app.set('views', path.join(__dirname, '/views'));
 app.engine('html', require('ejs').renderFile);
+app.set('views', path.join(__dirname, '/views'));
 app.set('view engine', 'html');
 
-
+//**OKK**//
+//execute upload using post
 
 app.post("/", upload.single("file"), (req, res) => {
 
@@ -69,11 +72,15 @@ app.post("/", upload.single("file"), (req, res) => {
       app.post('/pageTAG', urlencodedParser, function (req, res) {
 
 
+
         //res.send(result.ImageDesign.SubImage[0].Field[9].CalcData = ;
         result.ImageDesign.SubImage[0].Field[9].CalcData = req.body.NomeProduto;
         result.ImageDesign.SubImage[0].Field[6].CalcData = req.body.codigoProduto;
         result.ImageDesign.SubImage[0].Field[4].CalcData = req.body.codigoGeral
         let nameArchive = req.body.Name_archive
+
+
+
 
 
         var builder = new xml2js.Builder({ xmldec: { version: '1.0', encoding: 'UTF-16',standalone:"yes" }});
@@ -101,7 +108,8 @@ app.post("/", upload.single("file"), (req, res) => {
 
     return [elementXML_nome, elementXML_dados]
   }
-  
+  console.log(b())
+  console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
 
 
   let name = ""
@@ -136,6 +144,9 @@ app.get('/download', function (req, res) {
   var file = path.join(__dirname + '/edited-test.xml');
   res.download(file); // Set disposition and send it.
 });
+
+//**//
+
 
 
 
