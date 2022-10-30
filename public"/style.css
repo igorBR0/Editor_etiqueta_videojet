@@ -1,0 +1,43 @@
+.alingBySide{
+  display: inline-block;
+}
+.container {  display: grid;
+  grid-template-columns: 0.9fr 1.1fr 1fr 1fr;
+  grid-template-rows: 1fr 0.3fr 1.0fr 0.2fr 0.4fr 0.3fr 0.4fr 4.1fr;
+  gap: 1px 1px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "KC Bar-code Bar-code Bar-code"
+    ". codigo-grande codigo-grande codigo-grande"
+    "CODIGO-PRODUTO CODIGO-PRODUTO CODIGO-PRODUTO CODIGO-PRODUTO"
+    "CODIGO-GERAL CODIGO-GERAL CODIGO-GERAL CODIGO-GERAL"
+    "NOME-PRODUTO NOME-PRODUTO NOME-PRODUTO NOME-PRODUTO"
+    "DATAS DATAS DATAS DATAS"
+    "LOTE LOTE LOTE LOTE"
+;
+  width: 500px;
+  height: 400px;
+
+    border: 2px solid black;
+
+}
+
+.KC { grid-area: KC;     border: 1px solid white;}
+
+.Bar-code { grid-area: Bar-code;    border: 1px solid white; }
+
+.codigo-grande { grid-area: codigo-grande;  }
+
+
+.CODIGO-PRODUTO { grid-area: CODIGO-PRODUTO;    border: 1px solid white; text-align: center; }
+
+.CODIGO-GERAL { grid-area: CODIGO-GERAL;    border: 1px solid white; }
+
+.NOME-PRODUTO { grid-area: NOME-PRODUTO;     border: 1px solid white;}
+
+.DATAS { grid-area: DATAS;    border: 1px solid white; }
+
+.LOTE { grid-area: LOTE;    border: 1px solid white; }
+
+
+
