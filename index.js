@@ -6,6 +6,7 @@ const multer = require('multer');
 var bodyParser = require('body-parser')
 var jsonParser = bodyParser.json()
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
+fs.existsSync("uploads") || fs.mkdirSync("uploads");
 
 var xml2js = require('xml2js');
 
