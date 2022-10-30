@@ -45,8 +45,8 @@ app.use(express.static(path.join(__dirname + '/public')), bodyParser.json());
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 
-app.set('views', path.join(__dirname, '/public'));
-//app.set('views', path.join(__dirname, 'views'));
+//app.set('views', path.join(__dirname, '/public'));
+app.set('views', path.join(__dirname, 'views'));
 
   
 
@@ -131,7 +131,7 @@ app.post("/", upload.single("file"), (req, res) => {
 
   console.log(archive_Name)
 
-  res.render(path.join(__dirname + '/pageTag'), { name, codigo2: codigo, archive_Name });
+  res.render(path.join(__dirname + '/pageTAG'), { name, codigo2: codigo, archive_Name });
   
 
 
