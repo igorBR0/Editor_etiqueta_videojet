@@ -39,7 +39,7 @@ var express = require('express'),
 const port = process.env.PORT || 3000;
 app.use(express.static(__dirname + '/public'), bodyParser.json());
 
-app.set('views', path.join(__dirname, '/'));
+app.set('views', path.join(__dirname, ''));
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 
