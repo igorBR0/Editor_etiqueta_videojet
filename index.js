@@ -89,7 +89,7 @@ app.post("/", upload.single("file"), (req, res) => {
 
 
 
-        var builder = new xml2js.Builder({ xmldec: { version: '1.0', encoding: 'UTF-16',standalone:"yes" }});
+        var builder = new xml2js.Builder({ xmldec: {version: '1.0', encoding: 'UTF-16'}});
         var xml_write = builder.buildObject(result);
 
         fs.writeFile(nameArchive, xml_write, function (err, data) {
