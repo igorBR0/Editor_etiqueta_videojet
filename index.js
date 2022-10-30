@@ -35,6 +35,7 @@ const upload = multer({ storage })
 
 var express = require('express'),
   app = express();
+const port = process.env.PORT || 3000;
 app.use(express.static(__dirname + '/public'), bodyParser.json());
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
@@ -136,4 +137,4 @@ app.get('/download', function (req, res) {
 
 
 
-app.listen(3000)
+app.listen(port)
