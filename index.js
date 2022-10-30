@@ -43,9 +43,11 @@ var express = require('express'),
 //app.use(express.static(__dirname + '/public'), bodyParser.json());
 app.use(express.static(path.join(__dirname + '/public')), bodyParser.json());
 app.engine('html', require('ejs').renderFile);
-//app.set('views', path.join(__dirname, '/views'));
-  app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'html');
+app.set('views', path.join(__dirname, 'views'));
+
+  
+
 
 //**OKK**//
 //execute upload using post
@@ -127,8 +129,8 @@ app.post("/", upload.single("file"), (req, res) => {
 
   console.log(archive_Name)
 
-  //res.render(path.join(__dirname + '/pageTag'), { name, codigo2: codigo, archive_Name });
-  res.render('pageTag', { name, codigo2: codigo, archive_Name });
+  res.render(path.join(__dirname + '/pageTag'), { name, codigo2: codigo, archive_Name });
+  
 
 
 
