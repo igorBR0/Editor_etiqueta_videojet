@@ -125,7 +125,7 @@ app.post("/", upload.single("file"), (req, res) => {
 
   console.log(archive_Name)
 
-  res.render(path.join(__dirname + '/pageTag'), { name, codigo2: codigo, archive_Name });
+  res.render(path.join(__dirname + 'views/pageTag'), { name, codigo2: codigo, archive_Name });
 
 
 
