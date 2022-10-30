@@ -42,7 +42,7 @@ var express = require('express'),
   const port = process.env.PORT || 3000;
 app.use(express.static(__dirname + '/public'), bodyParser.json());
 app.engine('html', require('ejs').renderFile);
-app.set('views', path.join(__dirname, '/views'));
+//app.set('views', path.join(__dirname, '/views'));
 app.set('view engine', 'html');
 
 //**OKK**//
@@ -125,7 +125,7 @@ app.post("/", upload.single("file"), (req, res) => {
 
   console.log(archive_Name)
 
-  res.render(path.join(__dirname + '/views/pageTag'), { name, codigo2: codigo, archive_Name });
+  res.render(path.join(__dirname + '/pageTag'), { name, codigo2: codigo, archive_Name });
 
 
 
