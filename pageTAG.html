@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <script src="JsBarcode.all.min.js"></script>
+
+
+</head>
+
+<div class="alingBySide">
+  <div class="container">
+    <div class="KC">
+      <h1>
+        <%= name[1][3]%>
+      </h1>
+    </div>
+    <div class="Bar-code"><svg id="barcode"></svg>
+
+      <script>
+
+        JsBarcode("#barcode", +<%= name[1][4] %>, {
+
+
+          width: 3,
+          height: 70,
+          displayValue: true,
+          textAlign: "center"
+        });
+
+
+      </script>
+    </div>
+
+
+    <div class="CODIGO-PRODUTO">
+      <h1>
+        <%= name[1][6]%>
+      </h1>
+    </div>
+    <div class="CODIGO-GERAL">
+      <svg id="barcode2"></svg>
+
+      <script>
+
+
+
+
+
+        JsBarcode("#barcode2",<%= codigo2 %> , {
+
+
+          width: 2,
+          height: 70,
+          displayValue: false,
+          textAlign: 'center',
+          margin: 0,
+          marginLeft: 15
+
+        });
+
+      </script>
+      <p style="text-align :center;">
+        <%= codigo2 %>
+      </p>
+
+    </div>
+    <div class="NOME-PRODUTO">
+      <%= name[1][9]%>
+    </div>
+    <div class="DATAS">
+      <%= name[1][11]%>
+    </div>
+    <div class="LOTE">
+      <%= name[1][12]%>
+        <%= name[1][14]%>
+          <%= name[1][15]%>
+    </div>
+
+  </div>
+  
+</div>
+
+
+
+<!--Tag edit -->
+
+<div class="alingBySide">
+  
+  <div></div>
+  <form method="post" action="/pageTAG">
+    <label for="Name_archive">Name for save archive:</label>
+    <input  type="text" id="Name_archive" name="Name_archive" value="<%= archive_Name%>">
+    
+  <div class="container">
+    <div class="KC">
+      <h1>
+        
+        <%= name[1][3]%>
+      </h1>
+    </div>
+    <div   style=" text-align: center;" class="Bar-code"><svg id="barcode1"></svg>
+
+      <script>
+
+        JsBarcode("#barcode1", +<%= name[1][4] %>, {
+
+
+          width: 3,
+          height: 70,
+          displayValue: false,
+          textAlign: "center"
+        });
+
+
+      </script>
+      
+      <input   type="text" id="codigoGeral1" name="codigoGeral" size="30" value="<%= name[1][4]%>">
+ 
+    </div>
+
+
+    <div class="CODIGO-PRODUTO">
+      <h1>
+        <!--<%= name[1][6]%>-->
+        
+        <input   style="height: 30px;text-align: center;font-size:  18px;" type="text" id="codigoProduto" name="codigoProduto" size="50" value="<%= name[1][6]%>">
+   
+      </h1>
+    </div>
+    <div class="CODIGO-GERAL">
+      <svg id="barcode2"></svg>
+
+      <script>
+
+
+
+
+
+        JsBarcode("#barcode2",<%= codigo2 %> , {
+
+
+          width: 2,
+          height: 70,
+          displayValue: false,
+          textAlign: 'center',
+          margin: 0,
+          marginLeft: 15
+
+        });
+
+      </script>
+      <p style="text-align :center;">
+        <%= codigo2 %>
+      </p>
+
+    </div>
+   
+    <div class="NOME-PRODUTO">
+       <!-- <%= name[1][9]%> --> 
+       
+       <input type="text" id="NomeProduto" name="NomeProduto" size="50" value="<%= name[1][9]%>">
+      
+       
+    </div>
+    <div class="DATAS">
+
+    <%= name[1][11]%>
+    </div>
+    <div class="LOTE">
+      <%= name[1][12]%>
+        <%= name[1][14]%>
+          <%= name[1][15]%>
+          <input type="submit" value="Atualizar Etiqueta">
+
+        </form>
+    </div>
+   
+  </div>
+
+</div>
+<div>
+<form method="post" enctype="multipart/form-data" action="/">
+
+  <input type="file" name="file">
+  <input type="submit" value="upload">
+
+</form>
+<!-- Tag edit end-->
+
+
+
+</body>
+
+</html>
