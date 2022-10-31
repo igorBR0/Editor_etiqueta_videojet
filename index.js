@@ -92,7 +92,7 @@ app.post("/", upload.single("file"), (req, res) => {
         var builder = new xml2js.Builder({ xmldec: {version: '1.0', encoding: 'UTF-16'}});
         var xml_write = builder.buildObject(result);
 
-        fs.writeFile(nameArchive, xml_write, function (err, data) {
+        fs.writeFile(nameArchive, xml_write,'utf16le', function (err, data) {
           if (err) console.log(err);
 
           console.log("successfully written our update xml to file");
